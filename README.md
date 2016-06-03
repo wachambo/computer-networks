@@ -18,6 +18,9 @@ Is its basic architecture, how components are logically connected.
 * Shared bus
   * Single line: LAN Ethernet
   * Token Ring: LAN FDDI
+  
+![network-topologies](../master/img/500px-NetworkTopologies.svg.png)
+
 
 ### Connecting different Topologies
 * **NIC** (Network Internet Controller): provides the ability to access the transmission media cable or air, and process low-level network information.
@@ -34,6 +37,9 @@ Is its basic architecture, how components are logically connected.
 Open System Interconnection model.  
 Is a conceptual model.  
 Protocols enabled an entity in one host to interact with a corresponding entity at the same layer in another host.  
+  
+![osi-comm](../master/img/500px-OSI-model-Communication.svg.png)
+![osi-model](../master/img/OSI.gif)
 
 
 
@@ -54,7 +60,9 @@ Protocols:
 * Bluethoot phy layer
 
 ### RS232 Protocol
-Standard communication protocol for linking computer and its peripheral devices to allow serial data Exchange
+Standard communication protocol for linking computer and its peripheral devices to allow serial data Exchange.  
+![rs232-diagram](../master/img/500px-DB25_Diagram.svg.png)
+![rs232](../master/img/rs232.gif)
 
 
 * **DTE** Data Terminal Equipment: end converter user info or reconverter the receive signal. 
@@ -66,33 +74,40 @@ Standard communication protocol for linking computer and its peripheral devices 
 ### Syncronized data encoding
 1. Unipolar: 1/+,  0/-
 2. Polar
-  1. NRZ (Non-Return-Zero): 1/+,  0/-(or zero)
-
-  2. NRZS (NRZ-Space): 1/no change,  0/change
-  3. NRZI (NRZ-Inverted): 1/transition,  0/no transition
+  1. NRZ (Non-Return-Zero): 1/+,  0/-(or zero)  
+    ![nrz](../master/img/Nrz-lb.gif)
+  2. NRZS (NRZ-Space): 1/no change,  0/change  
+    ![nrz-s](../master/img/Nrz-s.gif)
+  3. NRZI (NRZ-Inverted): 1/transition,  0/no transition  
+    ![nrz-i](../master/img/NRZI_example.png)
 3. Bipolar: +, -,  zero
 
 ### Self synchronizing data Encoding
-1. Manchester: Data = Clock XOR Manchester
+1. Manchester: Data = Clock XOR Manchester  
+   ![manchester](../master/img/500px-Manchester_encoding_both_conventions.svg.png)
 
 2. Differential Manchester:
   * In the data half-period makes a transition for 0 and no transition for 1
-  * In clock half-period always begins with a transition from low to high or from high to low
+  * In clock half-period always begins with a transition from low to high or from high to low  
+   ![diff-manchester](../master/img/500px-Differential_manchester_encoding.svg.png)
 
 3. 4B/5B + MLT3: 
   * 4B5B: maps groups of four bits onto groups of 5 bits
-  * MLT3: cycles sequentially through the voltage levels −1, 0, +1. It moves to the next state to transmit a 1 bit, and stays in the same state to transmit a 0 bit
+  * MLT3: cycles sequentially through the voltage levels −1, 0, +1. It moves to the next state to transmit a 1 bit, and stays in the same state to transmit a 0 bit  
+   ![mlt3](../master/img/500px-MLT3encoding.svg.png)
 
 4. 8B/10B + PAM5
   * 4B5B: maps groups of four bits onto groups of 5 bits
-  * PAM5: Pulse-Amplitude Modulation, the message is encoded in the amplitude of a series of signal pulses
+  * PAM5: Pulse-Amplitude Modulation, the message is encoded in the amplitude of a series of signal pulses  
+   ![pam](../master/img/PAM_neutral.svg.png)
 
 
 ### Radio Frecuency data Encoding: varying one or more properties of the carrier signal
 * **AM** (Amplitude modulation)
 * **FM** (Frecuency mod)
 * **PM** (Phase mod)
-* **QAM** = PM + AM
+* **QAM** = PM + AM  
+![radio](../master/img/bbc_figura_4.jpg)
 
 ### Data Link (OSI)
 Transfers data between adjacent network nodes in a WAN or between nodes on the same LAN segment.
@@ -109,9 +124,9 @@ Sublayers:
     * Token bus, Token ring,..
 
 ### MAC Transmission
-* Unicast
-* Multicast
-* Broadcast
+* Unicast ![unicast](../master/img/320px-Unicast.svg.png)
+* Multicast ![multicast](../master/img/320px-Multicast.svg.png)
+* Broadcast ![broadcast](../master/img/320px-Broadcast.svg.png)
 
 ### Physical or MAC Address
 The local network addresses used in IEEE 802 and FDDI networks
@@ -127,13 +142,13 @@ TDMA (Time …)
 * Contention-based: any computer in the network can transmit data at any time (first come-first served)
 * Token-based or Reservation-based
 
-### CSMA/CD (Carrier Sense Multiple Access with Collision Detection)
-
+### CSMA/CD (Carrier Sense Multiple Access with Collision Detection)  
+![csmacd](../master/img/CSMACD-Algorithm.svg.png)
 
 
 ### Ethernet frame
-A data packet on an Ethernet link is called an _Ethernet packet_, which transports an **Ethernet frame** as payload
-
+A data packet on an Ethernet link is called an _Ethernet packet_, which transports an **Ethernet frame** as payload  
+![ethernet](../master/img/Ethernet_packet.gif)
 
 
 ### Network (OSI)
@@ -171,18 +186,21 @@ Since many networks are partitioned into subnetworks and connect to other networ
 
 ### IP Addressing space
 1. Structure
-  * IPv4 – 32 bits
+  * IPv4 – 32 bits  
+![ipv4](../master/img/IPv4.gif)
 
   * IPv6 – 128 bits
-2. Classes
+2. Classes  
+![ipclasses](../master/img/IP_classes.gif)
 3. Special addreses
   * Multicast: all class D addresses 
   * All class E addresses reserved -> Broadcast: 255.255.255.255 and others
   * Loopback 127.0.0.1/8
 …
 
-4. Networks / Subnetworks: logically visible subdivision of an IP network
-
+4. Networks / Subnetworks: logically visible subdivision of an IP network  
+![ipsub](../master/img/IP_subnetting.gif)
+![ipsub_s](../master/img/IP_subnetting_sample.gif)
 
 
 
@@ -193,7 +211,8 @@ IP packet consist of a header and a data section.
 * IHL: Internet Header Length
 * DSCP: Differenciated Services
 * Identification: indentify the group of fragments of a single IP datagram
-* Flags: to control or indentify fragments
+* Flags: to control or indentify fragments  
+![ip-pack](../master/img/IP_packet.gif)
 
 ### Host configuration in IP network
 
@@ -205,10 +224,12 @@ Computers request IP addresses and networking parameters automatically from a DH
 * DHCP OFFER
 * DHCP REQUEST
 * DHCP ACK/NACK
-* DHCP RELEASE
-* 
+* DHCP RELEASE  
+![dchp](../master/img/DHCP_Process.jpg.gif)
+
 ### ARP Protocol (Address Resolution Protocol)
-Used for resolution of Network layer addresses into Link layer addresses, a critical function in multiple-access networks
+Used for resolution of Network layer addresses into Link layer addresses, a critical function in multiple-access networks  
+![arp](../master/img/arp04.gif)
 
 
 ### Routing algorithms
@@ -248,15 +269,16 @@ Do not base their routing decisions on measurements and estimates of the current
 If a router J is on the optimal path from router I to router K, then the optimal path from J to K also follows the same route.  
 **Proof:** if there was a better way from J to K, then you could use that.  
 
-If you apply the optimality principle then you can form a tree by taking the optimal path from every other router to a single router, B. The tree is rooted at B. Since it is a tree you don't have loops, so you know that each frame will be delivered in a finite number of hops. Of course finding the set of optimal trees is a lot harder in practice than in theory, but it still provides a goal for all real routing algorithms.
+If you apply the optimality principle then you can form a tree by taking the optimal path from every other router to a single router, B. The tree is rooted at B. Since it is a tree you don't have loops, so you know that each frame will be delivered in a finite number of hops. Of course finding the set of optimal trees is a lot harder in practice than in theory, but it still provides a goal for all real routing algorithms.  
+![optimality](../master/img/sinktree.gif)
 
 
 ### Static routing algorithms
 1. Shortest path routing and Dijkstra algorithm:
 Problem of finding a path between two nodes(routers) in a graph(network) such that the sum of the weights (number of hops, geographic distance, mean queuing/transmission delay, bandwidth, cost) of its constituent edges is minimized.   
-**Dijkstra alg:** For a given source node in the graph, the algorithm finds the path with lowest cost (i.e. the shortest path) between that vertex and every other vertex
-
-
+**Dijkstra alg:** For a given source node in the graph, the algorithm finds the path with lowest cost (i.e. the shortest path) between that vertex and every other vertex  
+![dijkstra](../master/img/dijsktra.gif)
+![dijkstra_sample](../master/img/dijsktra_sample.gif)
 
 
 2. Routing by flooding:
@@ -271,11 +293,13 @@ Problem of finding a path between two nodes(routers) in a graph(network) suc
   1. Send
   2. Receive
   3. Measure
-  4. Calculate
-
+  4. Calculate  
+![rip](../master/img/RIP1.gif)
+![rip2](../master/img/RIP2.gif)
 
   At this point, all the routers (A,B,C,D) have new "shortest-paths" for their DV (distance vector that are from them to another router via a neighbor). They each broadcast this new DV to all their neighbors.
-  E.g: A receives a DV from C that tells A there is a path via C to D, with a distance of 5. Since the current "shortest-path" to C is 23, then A knows it has a path to D that costs 23+5=28
+  E.g: A receives a DV from C that tells A there is a path via C to D, with a distance of 5. Since the current "shortest-path" to C is 23, then A knows it has a path to D that costs 23+5=28  
+![rip3](../master/img/RIP3.gif)
 
   **The Count-to-Infinite Prolem:**  
   The Bellman–Ford algorithm does not prevent routing loops. The core of the count-to-infinity problem is that if A tells B that it has a path somewhere, there is no way for B to know if the path has B as a part of it
@@ -342,7 +366,8 @@ While IP handles actual delivery of the data, TCP keeps track of the individual 
 When an application program desires to send a large chunk of data (data stream) across the Internet using IP, the software can issue a single request to TCP and let TCP handle the IP details: divides it into chunks, and adds a TCP header creating a TCP segment. The TCP segment is then encapsulated into an IP datagram, and exchanged with peers.
 
 ### TCP Segment structure
-A TCP segment consists of a segment header and a data section
+A TCP segment consists of a segment header and a data section  
+![tcp_segment](../master/img/tcp_segment.gif)
 
 * Data offset: size
 * Control bits (NS, CWR, ECE, ACK….)
@@ -354,10 +379,8 @@ A TCP segment consists of a segment header and a data section
 1. TCP Connection stablishment
   * TCP 3-way handshake
     After Server executes LISTEN or ACCEPT, the Client execs CONNECT:
-
-
-
-
+![tcp_connect](../master/img/tcp_connect.gif)
+![tcp_handshake](../master/img/Tcp-handshake.svg.png)
 
 2. TCP Data transfer
   * TCP send-receive buffers
@@ -366,12 +389,12 @@ A TCP segment consists of a segment header and a data section
       Timers must be used to handle the cases that TPDU's are lost.
 
     * ACK loss case
-      Timers must be used to handle the cases that TPDU's are lost.
-
+      Timers must be used to handle the cases that TPDU's are lost.  
+![tcp_ackloss](../master/img/tcp_release_conn.gif)
 
     * ACK delayed case
-      The connection is automatically terminated if no TPDU is received for a certain number of seconds.
-
+      The connection is automatically terminated if no TPDU is received for a certain number of seconds.  
+![tcp_ackdelay](../master/img/tcp_release_conn_2.gif)
 
   * TCP sliding window: 
     Conceptually, each packet is assigned a unique consecutive sequence number, and the receiver uses the numbers to place received packets in the correct order, discarding duplicate packets and identifying missing ones. The problem with this is that there is no limit on the size of the sequence numbers that can be required.
@@ -380,10 +403,11 @@ A TCP segment consists of a segment header and a data section
   * Sliding window performance
   * TCP flow control and congestion avoidance
 Receiver changes window according to buffer consumption by application.
-When the Window = 0, the sender don’t send segments
+When the Window = 0, the sender don’t send segments  
+![tcp_transmission](../master/img/tcp_transmission.jpg)
 
 3. TCP Termination
-
+![tcp_close](../master/img/TCP_CLOSE.svg.png)
 
 ### UDP (User Datagram Protocol)
 Main functions:  
@@ -391,9 +415,8 @@ Computer applications can send messages, in this case referred to as datagrams,
 
 
 
-### UDP segment structure
-
-
+### UDP segment structure  
+![udp_header](../master/img/upd_hdr.gif)
 * Length: header + data
 * Checksum: used for error-checking of the header and data
   UDP checksum calculation:
