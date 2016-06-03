@@ -1,3 +1,9 @@
+# Computer Networks
+A brief summary about main topics of Computer Networks.  
+All the content was extrated from [Wikipedia](http://www.wikipedia.org) and some books whose names I cant remember right now.
+
+
+
 ### Computer Networks DEF
 Networking supports communication between two or more programs running on physically distant machines.
 - WWW browser, mail, remote access to DB, remote shared files, download files...
@@ -404,7 +410,7 @@ UDP provides checksums for data integrity, and port numbers for addressing d
   1. Reliable
   2. Ordered
   3. Heavyweight: needs 3 packets to set up a socket connection. Also handles reliability and congestion control.
-  4. Streaming: data is read as a byte stream
+  4. Streaming: data is read as a byte stream  
 **UDP:**
   1. UNReliable
   2. NOT Ordered
